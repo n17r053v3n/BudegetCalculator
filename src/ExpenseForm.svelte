@@ -29,6 +29,7 @@
         }
         name = "";
         amount = null;
+        closeForm();
     }
 </script>
 
@@ -37,7 +38,7 @@
     <form class="expense-form" on:submit|preventDefault={handleSubmit}>
         <div class="form-control">
             <label for="name">name</label>
-            <input type="text" id="name" bind:value={name} />
+            <input type="text" id="name" bind:value={name}/>
         </div>
         <div class="form-control">
             <label for="amount">amount</label>

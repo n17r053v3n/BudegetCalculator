@@ -7,6 +7,7 @@
 	import Expense from "./Expense.svelte";
 	import Totals from "./Totals.svelte";
 	import ExpenseForm from "./ExpenseForm.svelte";
+	import Modal from "./Modal.svelte";
 	//	data
 	import expendesData from "./expenses";
 	// variables
@@ -74,20 +75,25 @@
 			? JSON.parse(localStorage.getItem("expenses"))
 			: [];
 	});
-	afterUpdate(() => {setLocalStorage(); console.log('im here')});
+	afterUpdate(() => {
+		setLocalStorage();
+		console.log("im here");
+	});
 </script>
 
 <Navbar {openForm} />
 <main class="content">
 	{#if isFormOpen}
-		<ExpenseForm
-			{addExpese}
-			name={setName}
-			amount={setAmount}
-			{isEditing}
-			{editExpense}
-			{closeForm}
-		/>
+		<Modal>
+			<ExpenseForm
+				{addExpese}
+				name={setName}
+				amount={setAmount}
+				{isEditing}
+				{editExpense}
+				{closeForm}
+			/>
+		</Modal>
 	{/if}
 	<Totals title="total expenses" {total} />
 	<ExpensesList {expenses} />

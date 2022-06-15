@@ -2,7 +2,7 @@
 This is a project built by following a SkillShare Svelte tutorial by **[John Smilga](https://github.com/john-smilga)**  
 I built this project while learning the basics of Svelte
 
-> **[Node.js](https://nodejs.org)**
+> **[Node.js](https://nodejs.org)**  
 > **Internet connection** *(Source code uses graphics and fonts that are not present in the directory)*
 
 ## Run the project on localhost
